@@ -1,8 +1,8 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import Navbar from '../components/Navbar'
 import tw from 'tailwind-styled-components'
 import Head from 'next/head'
+import Navbar from '../components/Navbar'
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -10,21 +10,24 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>// Bruno Merez | Home</title>
       </Head>
-      <Navbar />
-      <Main className="">
-        <Component {...pageProps} />
+      <Main>
+        <Navbar />
+        <div>
+          <Component {...pageProps} />
+        </div>
       </Main>
     </div>
   )
 }
 
+// min-h-[calc(100vh_-_71px)]
 
 const Main = tw.main`
-  min-h-[calc(100vh_-_51px)]
+  min-h-screen
   py-2
   px-[3%]
-  lg:[5%]
+  lg:px-[5%]
   xl:px-[10%]
   2xl:px-[20%]
-  bg-[#333]
+  bg-[#282A36]
 `

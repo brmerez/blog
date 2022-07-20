@@ -1,55 +1,95 @@
-import Link from "next/link";
-import tw from "tailwind-styled-components"
+import React from 'react'
+import tw from 'tailwind-styled-components'
+import { BsLinkedin, BsGithub, BsTwitter, BsXDiamondFill } from "react-icons/bs"
+import styled from 'styled-components';
 
-export default function Navbar(){
-  return(
-    <NavStyle className="text-lg">
-      <Title><Square />bruno merez</Title>
-      <Links>
-        <Link href="/blog"><a>_blog</a></Link>
-        <Link href="/blog"><a>_projetos</a></Link>
-        <Link href="/blog"><a>_sobre</a></Link>
-        <Link href="/blog"><a>_linkedin</a></Link>
-        <Link href="/blog"><a>_github</a></Link>
-      </Links>
-    </NavStyle>
+export default function Navbar() {
+  return (
+    <NavStyles>
+      <Logo>
+        <Block/>
+        <Title>bruno(merez);</Title>
+        <Chamada>// Desenvolvedor Fullstack</Chamada>
+      </Logo>
+      <NavLinks>
+        <p>projetos</p>
+        <p>sobre</p>
+        <p>blog</p>
+        <BsGithub className="text-xl"/>
+        <BsTwitter className="text-xl"/>
+        <BsLinkedin className="text-xl"/>
+      </NavLinks>
+      <BsXDiamondFill className='md:hidden text-white text-2xl' />
+    </NavStyles>
   )
 }
 
-const Square = tw.div`
-  bg-[coral]
-  w-3
-  h-3
+const Logo = tw.div`
+  flex
+  items-center
+  font-['Menlo']
+`;
+const Block = tw.div`
+  h-[16px]
+  w-[16px]
+  bg-[#DC78C6]
+  block
+  mr-2
+  hover:bg-white
+  hover:rotate-90
+  hover:scale-125
+  hover:cursor-pointer
+  transition-all
 `;
 
-const Links = tw.div`
-  justify-end
-  hidden
-  md:flex
-  w-1/4
-  gap-4
-  text-base
-  font-light
-  font-mono
-`;
-const Title = tw.h2`
-  text-2xl
+const Title = tw.h4`
+  font-bold
+  text-lg
   flex
   items-center
   gap-2
-  font-lighter
+  text-white
+  drop-shadow-md
+  shadow-[#DC78C6]
+
 `;
 
-const NavStyle = tw.nav`
-  bg-[#333]
-  text-[#fff]
+const Chamada = tw.span`
+  opacity-60
+  text-[#BD91CD]
+  hidden
+  lg:block
+  text-xs
+  italic
+  ml-4
+`;
+
+const _NavLinks = styled.div`
+  & > * {
+    :hover{
+      cursor: pointer;
+      color: #DC78C6;
+    }
+  }
+`
+
+const NavLinks = tw(_NavLinks)`
+  gap-4
+  hidden
+  md:flex
+  items-center
+  text-white
+  font-semibold
+  tracking-wider
+`;
+
+const NavStyles = tw.header`
   flex
   items-center
   justify-between
-  py-5
-  h-[61px]
-  px-[3%]
-  lg:[5%]
-  xl:px-[10%]
-  2xl:px-[20%]
+  h-[71px]
+  border-b-[6px]
+  border-b-[#DC78C6]
+  shadow-md
+  mb-4
 `;
