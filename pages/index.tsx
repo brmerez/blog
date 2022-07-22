@@ -1,11 +1,5 @@
-import styled from "styled-components";
 import tw from "tailwind-styled-components";
 import _ from "lodash";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import {
-  dracula,
-  monokaiSublime,
-} from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 interface HeroProps {
   url: string;
@@ -13,49 +7,96 @@ interface HeroProps {
   tilt: number;
 }
 
-const randImg = (): HeroProps => ({
-  url: `https://picsum.photos/240`,
-  height: _.random(180, 280),
-  tilt: _.random(-4, 4),
-});
-
 export default function Home() {
   return (
     <Wrapper>
       <Chamada>
-        <h2 className="text-[coral] pb-4">~/</h2>
-        <div className="px-[7%] lg:m-auto lg:w-2/3 border-2 relative py-12 text-[0.9rem] md:text-[1.1rem]">
+        <div className="px-[7%] lg:m-auto lg:w-2/3 border-2 relative py-12 text-[0.95rem] md:text-[1.1rem]">
           <small className="absolute bottom-0 right-2 underline">
             apresentacao.md
           </small>
-          <p>
+          <p className="text-lg">
             Opa, <i>tudo bão?</i>
           </p>
           <br />
           <p>
-            Meu nome é Bruno, sou <Hih p>desenvolvedor web</Hih> baseado em São
-            Paulo - SP. Trabalho principalmente com <Hih>React</Hih> e{" "}
-            <Hih>Typescript</Hih>.
+            Meu nome é Bruno, sou <Hih p>desenvolvedor web</Hih> de São Paulo -
+            SP.
           </p>
           <br />
+          <p>
+            Meu interesse é desenvolver sistemas e aplicações que sejam
+            <Hih> modulares</Hih> e <Hih>escaláveis</Hih>: Fáceis de{" "}
+            <Hih g u>
+              usar
+            </Hih>
+            , fáceis de{" "}
+            <Hih g u>
+              manter
+            </Hih>
+            , e fáceis de{" "}
+            <Hih g u>
+              testar
+            </Hih>
+            .
+          </p>
+          <br />
+          <p>
+            Conheça um pouco mais sobre o meu trabalho clicando{" "}
+            <Hih b u>
+              aqui
+            </Hih>{" "}
+          </p>
+          {/* <br />
+          <p>
+            Por assim, sou um adepto (ou tento ser!) da{" "}
+            <Hih>Arquitetura Limpa</Hih> (Clean Architecture) e do{" "}
+            <Hih>Domain Driven Design</Hih>.
+          </p> */}
+          {/* <p>
+            Considero a programação uma atividade fundamentalmente{" "}
+            <Hih b>criativa</Hih>, tanto no quesito mais técnico de
+            implementação quanto no talvez mais intrigante processo de
+            arquitetura e entendimento de domínio.
+          </p> */}
+          {/* <p>
+            Considero que a arquitetura do software e o entendimento do domínio
+            são as partes cruciais para o desenvolvimento de qualquer aplicação.
+          </p> */}
+          {/* <br />
           <p>
             Atualmente trabalho na startup gastronômica{" "}
             <Hih p u>
               Assaz Orgânica
             </Hih>{" "}
-            criando soluções para <Hih g>automatizar</Hih> e{" "}
-            <Hih g>facilitar</Hih> os processos internos de produção.
+            desenvolvendo uma míriade de soluções busuucando{" "}
+            <Hih g>automatizar</Hih> e <Hih g>facilitar</Hih> os processos
+            internos de produção -- desde o controle de pedidos até emissão de
+            notas e controle de estoque.
           </p>
-          <br />
-          <p>
-            Conheça um pouco do meu trabalho{" "}
-            <span className="underline text-cyan-400">aqui</span>.
-          </p>
+          <br /> */}
           <br />
           <p>
             Eu também escrevo de vez em quando no meu <Hih u>blog</Hih> sobre
-            vários assuntos
+            vários assuntos -- tech e <i>não-tech</i>.
           </p>
+          <br />
+          <p>
+            Veja as últimas postagens clicando{" "}
+            <Hih b u>
+              aqui
+            </Hih>
+          </p>
+          <br />
+          <p>
+            Para contato profissional, por favor se refira à página de{" "}
+            <Hih b u>
+              contato
+            </Hih>
+            .
+          </p>
+          <br />
+          <p>Valeu!</p>
         </div>
       </Chamada>
     </Wrapper>
@@ -80,7 +121,7 @@ const Chamada = tw.section`
   w-full
   h-full
   flex-col
-  font-mono
+  font-[Menlo]
   gap-2
   flex
   text-white

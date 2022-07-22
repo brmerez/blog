@@ -1,22 +1,34 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&family=Fira+Sans:wght@100;300;400;600&display=swap'); */
 /* @import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:ital@0;1&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&family=Lora:ital@0;1&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400IBM+Plex+Mono:ital@0;1&family=IBM+Plex+Sans:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700IBM+Plex+Mono:ital@0;1&family=IBM+Plex+Sans:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&family=Lora:ital@0;1&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@0;1&display=swap'); */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root{
+  --pink: #DC78C6;
+  --bg: #282A36;
+  --purple: #BD91CD;
+}
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, Menlo, Roboto Mono, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  color: #fff;
+  font-family: -apple-system, IBM Plex Mono, Menlo, Roboto Mono, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  
+}
+
+a:hover{
+  color:#DC78C6;
 }
 
 * {

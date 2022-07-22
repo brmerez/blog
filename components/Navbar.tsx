@@ -1,27 +1,47 @@
-import React from 'react'
-import tw from 'tailwind-styled-components'
-import { BsLinkedin, BsGithub, BsTwitter, BsXDiamondFill } from "react-icons/bs"
-import styled from 'styled-components';
+import React from "react";
+import tw from "tailwind-styled-components";
+import {
+  BsLinkedin,
+  BsGithub,
+  BsTwitter,
+  BsXDiamondFill,
+} from "react-icons/bs";
+import styled from "styled-components";
+import Anchor from "./Anchor";
 
 export default function Navbar() {
   return (
     <NavStyles>
-      <Logo>
-        <Block/>
-        <Title>bruno(merez);</Title>
-        <Chamada>// Desenvolvedor Fullstack</Chamada>
-      </Logo>
+      <Anchor to="/">
+        <Logo>
+          <Block />
+          <Title>bruno(merez);</Title>
+          <Chamada>// Desenvolvedor Fullstack</Chamada>
+        </Logo>
+      </Anchor>
       <NavLinks>
-        <p>projetos</p>
-        <p>sobre</p>
-        <p>blog</p>
-        <BsGithub className="text-xl"/>
-        <BsTwitter className="text-xl"/>
-        <BsLinkedin className="text-xl"/>
+        <Anchor to="/projetos">
+          <p>projetos</p>
+        </Anchor>
+        <Anchor to="/blog">
+          <p>blog</p>
+        </Anchor>
+        <Anchor to="/sobre">
+          <p>sobre</p>
+        </Anchor>
+        <Anchor target="_blank" to="https://github.com/brmerez">
+          <BsGithub className="text-xl" />
+        </Anchor>
+        <Anchor target="_blank" to="http://twitter.com/brmerez">
+          <BsTwitter className="text-xl" />
+        </Anchor>
+        <Anchor target="_blank" to="https://linkedin.com/in/bruno-merez/">
+          <BsLinkedin className="text-xl" />
+        </Anchor>
       </NavLinks>
-      <BsXDiamondFill className='md:hidden text-white text-2xl' />
+      <BsXDiamondFill className="md:hidden text-white text-2xl" />
     </NavStyles>
-  )
+  );
 }
 
 const Logo = tw.div`
@@ -66,12 +86,12 @@ const Chamada = tw.span`
 
 const _NavLinks = styled.div`
   & > * {
-    :hover{
+    :hover {
       cursor: pointer;
-      color: #DC78C6;
+      color: #dc78c6;
     }
   }
-`
+`;
 
 const NavLinks = tw(_NavLinks)`
   gap-4

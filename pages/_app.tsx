@@ -1,8 +1,9 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
-import tw from 'tailwind-styled-components'
-import Head from 'next/head'
-import Navbar from '../components/Navbar'
+import "../styles/globals.css";
+import type { AppProps } from "next/app";
+import tw from "tailwind-styled-components";
+import Head from "next/head";
+import Navbar from "../components/Navbar";
+import Path from "../components/Path";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -12,12 +13,13 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <Main>
         <Navbar />
+        <Path />
         <div>
           <Component {...pageProps} />
         </div>
       </Main>
     </div>
-  )
+  );
 }
 
 // min-h-[calc(100vh_-_71px)]
@@ -29,5 +31,5 @@ const Main = tw.main`
   lg:px-[5%]
   xl:px-[10%]
   2xl:px-[20%]
-  bg-[#282A36]
-`
+  bg-bg
+`;
